@@ -8,7 +8,7 @@ CREATE TABLE Users (
 
 CREATE TABLE MealPlan (
     planID SERIAL PRIMARY KEY,
-    name VARCHAR(100),
+    planName VARCHAR(1000),
     startDate DATE,
     endDate DATE
 );
@@ -24,8 +24,7 @@ CREATE TABLE Creates (
 CREATE TABLE Recipe (
     recipeID SERIAL PRIMARY KEY,
     instructions TEXT NOT NULL,
-    name VARCHAR(100),
-    servingSize INTEGER
+    recipeName VARCHAR(1000)
 );
 
 CREATE TABLE Contained (
@@ -38,8 +37,7 @@ CREATE TABLE Contained (
 
 CREATE TABLE Ingredient (
     ingredientID SERIAL PRIMARY KEY,
-    name VARCHAR(100),
-    unit VARCHAR(50)
+    ingredientName VARCHAR(1000)
 );
 
 CREATE TABLE MadeOf (
@@ -48,20 +46,6 @@ CREATE TABLE MadeOf (
     PRIMARY KEY (recipeID, ingredientID),
     FOREIGN KEY (recipeID) REFERENCES Recipe(recipeID) ON DELETE CASCADE,
     FOREIGN KEY (ingredientID) REFERENCES Ingredient(ingredientID) ON DELETE CASCADE
-);
-
-CREATE TABLE GroceryItem (
-    itemID SERIAL PRIMARY KEY,
-    name VARCHAR(100),
-    price DECIMAL(10, 2)
-);
-
-CREATE TABLE Matches (
-    ingredientID INTEGER,
-    itemID INTEGER,
-    PRIMARY KEY (ingredientID, itemID),
-    FOREIGN KEY (ingredientID) REFERENCES Ingredient(ingredientID) ON DELETE CASCADE,
-    FOREIGN KEY (itemID) REFERENCES GroceryItem(itemID) ON DELETE CASCADE
 );
 
 CREATE TABLE GroceryList (
@@ -79,9 +63,9 @@ CREATE TABLE Generates (
 );
 
 CREATE TABLE Includes (
-    itemID INTEGER,
+    ingredientID INTEGER,
     listID INTEGER,
-    PRIMARY KEY (itemID, listID),
-    FOREIGN KEY (itemID) REFERENCES GroceryItem(itemID) ON DELETE CASCADE,
+    PRIMARY KEY (ingredientID, listID),
+    FOREIGN KEY (ingredientID) REFERENCES Ingredient(ingredientID) ON DELETE CASCADE,
     FOREIGN KEY (listID) REFERENCES GroceryList(listID) ON DELETE CASCADE
 );
