@@ -51,7 +51,7 @@ CREATE TABLE MadeOf (
 CREATE TABLE GroceryList (
     listName VARCHAR(1000),
     listID SERIAL PRIMARY KEY,
-    date DATE,
+    date DATE
 );
 
 CREATE TABLE Generates (
