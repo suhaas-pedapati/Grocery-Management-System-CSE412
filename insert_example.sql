@@ -1,14 +1,14 @@
-﻿-- Insert data into Users table 
-INSERT INTO Users (username, password, email, creationDate) VALUES ('user1', 'password123', 'user1@example.com', '2024-08-28');
-INSERT INTO Users (username, password, email, creationDate) VALUES ('user2', 'password123', 'user2@example.com', '2024-08-22');
-INSERT INTO Users (username, password, email, creationDate) VALUES ('user3', 'password123', 'user3@example.com', '2024-08-26');
-INSERT INTO Users (username, password, email, creationDate) VALUES ('user4', 'password123', 'user4@example.com', '2024-09-23');
-INSERT INTO Users (username, password, email, creationDate) VALUES ('user5', 'password123', 'user5@example.com', '2024-08-09');
-INSERT INTO Users (username, password, email, creationDate) VALUES ('user6', 'password123', 'user6@example.com', '2024-09-16');
-INSERT INTO Users (username, password, email, creationDate) VALUES ('user7', 'password123', 'user7@example.com', '2024-09-14');
-INSERT INTO Users (username, password, email, creationDate) VALUES ('user8', 'password123', 'user8@example.com', '2024-09-16');
-INSERT INTO Users (username, password, email, creationDate) VALUES ('user9', 'password123', 'user9@example.com', '2024-08-15');
-INSERT INTO Users (username, password, email, creationDate) VALUES ('user10', 'password123', 'user10@example.com', '2024-10-04');
+-- Insert data into Users table 
+INSERT INTO Users (username, password, email) VALUES ('user1', 'password123', 'user1@example.com');
+INSERT INTO Users (username, password, email) VALUES ('user2', 'password123', 'user2@example.com');
+INSERT INTO Users (username, password, email) VALUES ('user3', 'password123', 'user3@example.com');
+INSERT INTO Users (username, password, email) VALUES ('user4', 'password123', 'user4@example.com');
+INSERT INTO Users (username, password, email) VALUES ('user5', 'password123', 'user5@example.com');
+INSERT INTO Users (username, password, email) VALUES ('user6', 'password123', 'user6@example.com');
+INSERT INTO Users (username, password, email) VALUES ('user7', 'password123', 'user7@example.com');
+INSERT INTO Users (username, password, email) VALUES ('user8', 'password123', 'user8@example.com');
+INSERT INTO Users (username, password, email) VALUES ('user9', 'password123', 'user9@example.com');
+INSERT INTO Users (username, password, email) VALUES ('user10', 'password123', 'user10@example.com');
 
 -- Insert data into MealPlan table 
 INSERT INTO MealPlan (planName, startDate, endDate) VALUES ('Meal Plan 1', DATE '2024-09-30', DATE '2024-10-07');
