@@ -49,9 +49,9 @@ CREATE TABLE MadeOf (
 );
 
 CREATE TABLE GroceryList (
+    listName VARCHAR(1000),
     listID SERIAL PRIMARY KEY,
     date DATE,
-    totalPrice DECIMAL(10, 2)
 );
 
 CREATE TABLE Generates (
@@ -63,8 +63,8 @@ CREATE TABLE Generates (
 );
 
 CREATE TABLE Includes (
-    ingredientID INTEGER,
     listID INTEGER,
+    ingredientID INTEGER,
     PRIMARY KEY (ingredientID, listID),
     FOREIGN KEY (ingredientID) REFERENCES Ingredient(ingredientID) ON DELETE CASCADE,
     FOREIGN KEY (listID) REFERENCES GroceryList(listID) ON DELETE CASCADE
