@@ -1,4 +1,4 @@
-﻿-- Insert data into Users table without specifying userID
+﻿-- Insert data into Users table 
 INSERT INTO Users (username, password, email, creationDate) VALUES ('user1', 'password123', 'user1@example.com', '2024-08-28');
 INSERT INTO Users (username, password, email, creationDate) VALUES ('user2', 'password123', 'user2@example.com', '2024-08-22');
 INSERT INTO Users (username, password, email, creationDate) VALUES ('user3', 'password123', 'user3@example.com', '2024-08-26');
@@ -10,7 +10,7 @@ INSERT INTO Users (username, password, email, creationDate) VALUES ('user8', 'pa
 INSERT INTO Users (username, password, email, creationDate) VALUES ('user9', 'password123', 'user9@example.com', '2024-08-15');
 INSERT INTO Users (username, password, email, creationDate) VALUES ('user10', 'password123', 'user10@example.com', '2024-10-04');
 
--- Insert data into MealPlan table without specifying planID
+-- Insert data into MealPlan table 
 INSERT INTO MealPlan (planName, startDate, endDate) VALUES ('Meal Plan 1', DATE '2024-10-20', DATE '2024-10-27');
 INSERT INTO MealPlan (planName, startDate, endDate) VALUES ('Meal Plan 2', DATE '2024-11-08', DATE '2024-11-15');
 INSERT INTO MealPlan (planName, startDate, endDate) VALUES ('Meal Plan 3', DATE '2024-11-01', DATE '2024-11-08');
@@ -34,7 +34,7 @@ INSERT INTO Creates (userID, planID) VALUES (8, 8);
 INSERT INTO Creates (userID, planID) VALUES (9, 9);
 INSERT INTO Creates (userID, planID) VALUES (10, 10);
 
--- Insert data into Contained table ensuring unique recipes per plan
+-- Insert data into Contained table with different recipes for each plan
 DO $$
 DECLARE
     recipe_offset INTEGER;
@@ -67,7 +67,7 @@ BEGIN
     END LOOP;
 END $$;
 
--- Insert data into Includes table with all ingredients from each meal plan's recipes
+-- Insert data into Includes table with each grocery list containing all needed ingredients
 DO $$
 DECLARE
     rec RECORD;
