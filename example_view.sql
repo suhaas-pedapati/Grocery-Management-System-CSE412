@@ -1,34 +1,23 @@
---CREATE VIEW FullMealPlanView AS
 SELECT 
-    u.userID,
-    u.username,
-    mp.planID,
-    mp.planName,
-    mp.startDate,
-    mp.endDate,
-    gl.listID,
-    gl.listName,
-    gl.date AS groceryListDate,
-    r.recipeID,
-    r.recipeName,
-	i.ingredientID,
-    i.ingredientName,
-    r.instructions
+   u.userid ,
+   u.username ,
+   mp.planid ,
+   mp.planname ,
+   mp.startdate ,
+   mp.enddate ,
+   gl.listid ,
+   gl.listname ,
+   gl.date AS grocerylistdate ,
+   r.recipeid ,
+   r.recipename ,
+   i.ingredientid ,
+   i.ingredientname ,
+   r.instructions 
 FROM 
-    Users u
-JOIN 
-    Creates c ON u.userID = c.userID
-JOIN 
-    MealPlan mp ON c.planID = mp.planID
-JOIN 
-    Generates g ON mp.planID = g.planID
-JOIN 
-    GroceryList gl ON g.listID = gl.listID
-JOIN 
-    Contained ct ON mp.planID = ct.planID
-JOIN 
-    Recipe r ON ct.recipeID = r.recipeID
-JOIN 
-    MadeOf mo ON r.recipeID = mo.recipeID
-JOIN 
-    Ingredient i ON mo.ingredientID = i.ingredientID;
+   Users u 
+JOIN MealPlan mp ON u.userid = mp.userid 
+JOIN GroceryList gl ON mp.planid = gl.planid 
+JOIN Contained ct ON mp.planid = ct.planid 
+JOIN Recipe r ON ct.recipeid = r.recipeid 
+JOIN MadeOf mo ON r.recipeid = mo.recipeid 
+JOIN Ingredient i ON mo.ingredientid = i.ingredientid ;
