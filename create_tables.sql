@@ -45,7 +45,7 @@ CREATE TABLE MadeOf (
 CREATE TABLE GroceryList (
     listName VARCHAR(1000),
     listID SERIAL PRIMARY KEY,
-	planID INTEGER,
+    planID INTEGER,
     date DATE,
     FOREIGN KEY (planID) REFERENCES MealPlan(planID) ON DELETE CASCADE
 );
