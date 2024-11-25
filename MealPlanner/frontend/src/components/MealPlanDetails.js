@@ -17,7 +17,7 @@ const MealPlanDetails = () => {
     useEffect(() => {
         const fetchMealPlanDetails = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/mealplans/${planID}/details`);
+                const response = await axios.get(`http://localhost:4000/mealplans/${planID}/details`);
                 setMealPlanDetails(response.data);
             } catch (err) {
                 console.error(err);

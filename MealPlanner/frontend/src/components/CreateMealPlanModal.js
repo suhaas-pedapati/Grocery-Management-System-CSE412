@@ -15,7 +15,7 @@ const CreateMealPlanModal = ({ isOpen, onClose, onMealPlanCreated }) => {
     useEffect(() => {
         const fetchRecipes = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/recipes'); // Adjust endpoint
+                const response = await axios.get('http://localhost:4000/recipes'); // Adjust endpoint
                 setRecipes(response.data || []); // Ensure recipes is always an array
             } catch (err) {
                 console.error(err);
@@ -58,7 +58,7 @@ const CreateMealPlanModal = ({ isOpen, onClose, onMealPlanCreated }) => {
             const userID = localStorage.getItem('userID');
 
             // Send data to backend
-            const response = await axios.post('http://localhost:5000/mealplans/mealplans', {
+            const response = await axios.post('http://localhost:4000/mealplans/mealplans', {
                 userID,
                 name: mealPlanName,
                 startDate,

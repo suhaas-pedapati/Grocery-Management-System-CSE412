@@ -24,7 +24,7 @@ const UserPage = () => {
 
         const fetchMealPlans = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/mealplans/user/${userID}`);
+                const response = await axios.get(`http://localhost:4000/mealplans/user/${userID}`);
                 setMealPlans(response.data);
             } catch (err) {
                 console.error(err);
