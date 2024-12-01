@@ -27,6 +27,18 @@ const MealPlanDetails = () => {
         fetchMealPlanDetails();
     }, [planID]);
 
+    // Function to delete the meal plan
+    const handleDeleteMealPlan = async () => {
+        try {
+            await axios.delete(`http://localhost:4000/mealplans/mealplans/${planID}`);
+            alert('Meal Plan completed and deleted successfully.');
+            navigate('/user'); // Redirect to user page after deletion
+        } catch (err) {
+            console.error(err);
+            alert('Failed to delete meal plan.');
+        }
+    };
+
     if (!mealPlanDetails) {
         return <p>Loading...</p>;
     }
@@ -37,6 +49,9 @@ const MealPlanDetails = () => {
         <div className="meal-plan-details">
             {/* Back Button */}
             <button className="back-button" onClick={() => navigate('/user')}>Back</button>
+
+            {/* Complete Button */}
+            <button className="complete-button" onClick={handleDeleteMealPlan}>Complete</button>
 
             {/* Meal Plan Name and Dates */}
             <h1>{name}</h1>

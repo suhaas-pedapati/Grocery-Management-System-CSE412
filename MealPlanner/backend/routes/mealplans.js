@@ -109,4 +109,19 @@ router.post('/mealplans', async (req, res) => {
      }
 });
 
+// Delete a meal plan
+router.delete('/mealplans/:planID', async (req, res) => {
+    try {
+        const { planID } = req.params;
+
+        // Delete from MealPlan table
+        await pool.query('DELETE FROM MealPlan WHERE planID = $1', [planID]);
+        
+        res.json({ success: true });
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+});
+
 module.exports = router;

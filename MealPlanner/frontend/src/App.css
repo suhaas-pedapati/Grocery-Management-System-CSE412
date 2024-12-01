@@ -342,3 +342,18 @@ button.back-button:hover {
 .buttons-container button {
   margin-left: 10px; /* Add spacing between Done and Cancel buttons */
 }
+
+.complete-button {
+  background-color: #d9534f; 
+  padding: 12px;
+  color: white;
+  border-radius: 5px;
+  position: absolute; 
+  top: 15px; 
+  right: 15px; 
+  margin: auto;
+}
+
+.complete-button:hover {
+  background-color: #c9302c; 
+}
