@@ -35,17 +35,17 @@ const LoginForm = () => {
         <div className="center-content">
             {/* Back Button in Top Left */}
             <div className="back-button-container">
-                <button className="back-button" onClick={() => navigate('/')}>Back</button>
+                <button className="back-button" onClick={() => navigate('/')}>Back to Home Page</button>
             </div>
 
             <form onSubmit={onSubmit}>
-                <h2>Login</h2>
+                <h2>Login:</h2>
                 <input 
                     type="email" 
                     name="email" 
                     value={email} 
                     onChange={onChange} 
-                    placeholder="Email" 
+                    placeholder="Enter your Email ID" 
                     required 
                 />
                 <input 
@@ -53,10 +53,10 @@ const LoginForm = () => {
                     name="password" 
                     value={password} 
                     onChange={onChange} 
-                    placeholder="Password" 
+                    placeholder="Enter your Password" 
                     required 
                 />
-                <button type="submit">Login</button>
+                <button type="submit">Let's Go!</button>
             </form>
         </div>
     );
