@@ -1,12 +1,12 @@
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  font-family: 'Poppins', sans-serif; /* Updated font for a modern look */
+  background-color: black;
   margin: 0;
   padding: 0;
 }
 
-h1, h2 {
+h1, h2, p {
   color: #333;
   text-align: center;
   font-weight: bold;
@@ -37,20 +37,23 @@ input[type="text"], input[type="email"], input[type="password"] {
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 12px; /* Rounded corners */
 }
 
 button {
-  background-color: #04AA6D; /* Green */
+  font-family: 'Poppins', sans-serif; /* Updated font for a modern look */
+  background-color: #f57c00; /* Orange */
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 12px; /* Rounded corners */
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #039f5e; /* Darker Green */
+  background-color: #e56700; /* Darker Orange */
 }
 
 /* Back Button Styling */
@@ -65,15 +68,15 @@ button.back-button:hover {
 /* Positioning Back Button in Top Left Corner */
 .back-button-container {
   position: absolute;
-  top: 20px;   /* Adjust to move it down from the top */
-  left: 20px;   /* Adjust to move it right from the left edge */
+  top: 20px;
+  left: 20px;
 }
 
 /* Positioning Logout Button in Top Right Corner */
 .logout-button-container {
   position: absolute;
-  top: 20px;   /* Adjust to move it down from the top */
-  right: 20px; /* Adjust to move it left from the right edge */
+  top: 20px;
+  right: 20px;
 }
 
 .logout-button-container button,
@@ -85,154 +88,127 @@ button.back-button:hover {
   background-color: #444444; /* Darker Gray */
 }
 
-/* Center content on the page */
 .center-content {
   display: flex;
   flex-direction: column; /* Align items vertically */
   align-items: center;
+  max-width: 800px; /* Limit the width for better readability */
+  margin: 50px auto; /* Center the section horizontally and add vertical spacing */
+  padding: 20px; /* Add padding for internal spacing */
+  background-color: #ffffff; /* Optional: Add a background color */
+  border-radius: 12px; /* Rounded corners for a polished look */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow */
 }
 
 /* Style for the container of the login/register buttons */
 .button-container {
-    display: flex;
-    flex-direction: column; /* Align buttons vertically */
-    align-items: center;    /* Center buttons horizontally */
+  display: flex;
+  flex-direction: column; /* Align buttons vertically */
+  align-items: center; /* Center buttons horizontally */
 }
 
 .button-container button {
-    margin-bottom: 20px; /* Space between Login and Register buttons */
+  margin-bottom: 20px; /* Space between Login and Register buttons */
 }
 
 /* Style for the user page */
 .user-page {
-    text-align: center;
+  text-align: center;
 }
 
 /* Style for meal plans displayed horizontally */
 .mealplan-container {
   display: flex;
   justify-content: center; /* Center meal plans horizontally */
-  flex-wrap: wrap;         /* Allow wrapping to next line if too many items */
-  gap: 20px;               /* Add space between meal plan items */
-  padding-top: 20px;       /* Add spacing above meal plans section */
+  flex-wrap: wrap; /* Allow wrapping to next line if too many items */
+  gap: 20px; /* Add space between meal plan items */
+  padding-top: 20px;
 }
 
 .mealplan-item {
-  border: 1px solid #ccc;     /* Border around each meal plan card */
-  border-radius: 5px;         /* Rounded corners for cards */
-  padding: 15px;              /* Inner spacing for content inside cards */
-  margin-bottom: 10px;        /* Space below each card (for wrapping) */
-  width: calc(30% - 40px);    /* Adjust width for three items per row with margins included */
-  background-color: white;   /* Add a white background for contrast against page background */
-  box-shadow: rgba(0,0,0,0.1) 0px 4px 6px; /* Subtle shadow for better visibility */
-  cursor: pointer;           /* Change cursor to pointer on hover */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effects */
+  border: 1px solid #ccc;
+  border-radius: 12px; /* Rounded corners */
+  padding: 15px;
+  margin-bottom: 10px;
+  width: calc(30% - 40px);
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Hover effect for meal plan cards */
 .mealplan-item:hover {
-  transform: scale(1.05);     /* Slightly enlarge the card on hover */
-  box-shadow: rgba(0,0,0,0.2) 0px 8px 12px; /* Darker shadow on hover */
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
 }
 
+/* Placeholder Button for Creating Meal Plans */
+.create-mealplan-button {
+  margin-top: 25px;
+  padding: 15px;
+  background-color: #f57c00;
+  color: white;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
 
-/* Placeholder Button for Creating Meal Plans */ 
-.create-mealplan-button { 
-    margin-top: 25px; 
-    padding: 15px;               /* Adjust padding for larger button size */ 
-    background-color:#04AA6D ;   /**Green Background.**/ 
-    margin-right: calc(80%);
-} 
-
-.create-mealplan-button:hover { 
-  background-color: #039f5e; /* Darker green on hover */
+.create-mealplan-button:hover {
+  background-color: #e56700;
 }
 
 /* Layout for the details container */
 .details-container {
   display: flex;
-  justify-content: space-between; /* Add space between recipe and grocery list tables */
-  padding: 20px; /* Add padding around the container */
-  gap: 40px; /* Space between the two tables */
+  justify-content: space-between;
+  padding: 20px;
+  gap: 40px;
   margin-top: 50px;
 }
 
-/* Recipe Table Styling */
-.recipe-table {
-  width: 90%; /* Each table takes less than half of the available space */
-  border-collapse: collapse; /* Collapse borders for a clean look */
-  margin-left: 20px; /* Add space between the left side of the screen and the table */
+.recipe-table, .grocery-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-left: 20px;
 }
 
 .recipe-table th,
-.recipe-table td {
-  border: 1px solid #ccc; /* Add borders to cells */
-  padding: 10px; /* Padding inside cells */
-  text-align: left; /* Align text to the left */
+.recipe-table td,
+.grocery-table th,
+.grocery-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
 }
 
-.recipe-table th {
-  background-color: #f2f2f2; /* Light gray background for headers */
-  font-weight: bold; /* Bold text for headers */
+.recipe-table th, .grocery-table th {
+  background-color: #ffefdb; /* Light Orange */
+  font-weight: bold;
   text-align: center;
 }
 
-/* Grocery List Container Styling */
-.grocery-list-container {
-  width: 55%; /* Each table takes less than half of the available space */
-}
-
-.grocery-list-container h2 {
-  text-align: left; /* Center-align the grocery list name above its table */
-  margin-bottom: 10px; /* Add spacing below the heading */
-}
-
-/* Grocery List Container Styling */
-.recipe-container {
-  width: 100%; /* Each table takes less than half of the available space */
-}
-
-.recipe-container h2 {
-  text-align: center; /* Center-align the grocery list name above its table */
-  margin-bottom: 10px; /* Add spacing below the heading */
-  
-}
-
-.grocery-table {
-  width: 55%; /* Full width of its container */
-  border-collapse: collapse; /* Collapse borders for a clean look */
-}
-
-.grocery-table th,
-.grocery-table td {
-  border: 1px solid #ccc; /* Add borders to cells */
-  padding: 10px; /* Padding inside cells */
-}
-
-.grocery-table th {
-  background-color: #f2f2f2; /* Light gray background for headers */
-}
-
-/* Ensure no table touches the edges of the screen or each other */
 .details-container > * {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Back Button Styling (for consistency) */
 .back-button {
-  padding: 12px;
-  background-color: #555555; /* Gray background color for back button */
+  padding: 12px 24px; /* Increase horizontal padding */
+  background-color: #555555;
   color: white;
-  border-radius: 5px;
-  position: absolute; 
-  top: 15px; 
-  left: 15px; 
+  border-radius: 12px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
   margin: auto;
+  font-size: 16px; /* Optional: Increase font size for better readability */
+  width: auto; /* Ensure the width adjusts based on the content */
+  min-width: 220px; /* Optional: Set a minimum width to make the button longer */
+  text-align: center; /* Center the text inside the button */
 }
 
 .back-button:hover {
-  background-color: #444444; /* Darker gray on hover */
+  background-color: #444444;
 }
 
 .modal-overlay {
@@ -247,12 +223,11 @@ button.back-button:hover {
   align-items: center;
 }
 
-/* Modal Content Styling */
 .modal-content {
   background-color: white;
   padding: 20px;
-  border-radius: 5px;
-  width: 800px; /* Adjust width for a balanced layout */
+  border-radius: 12px;
+  width: 800px;
 }
 
 .modal-content h2 {
@@ -260,50 +235,33 @@ button.back-button:hover {
   margin-bottom: 20px;
 }
 
-/* Label and Input Styling */
 .modal-content label {
   display: block;
   font-weight: bold;
-  margin-bottom: 5px; /* Small space between label and input */
+  margin-bottom: 5px;
 }
 
 .modal-content input[type="text"],
 .modal-content input[type="date"] {
-  width: calc(50% - 10px); /* Adjust width for Start Date and End Date */
-  padding: 8px; /* Reduce padding for compact inputs */
-  margin-bottom: 10px; /* Small space below each input */
+  width: calc(50% - 10px);
+  padding: 8px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 12px;
   margin-left: 10px;
 }
 
-/* Layout for Meal Plan Name */
-.meal-plan-name-container {
-  display: flex;
-  align-items: center; /* Vertically align items */
-}
-
-.meal-plan-name-container input[type="text"] {
-  width: calc(25% - 20px); /* Adjust width for Meal Plan Name */
-}
-
-/* Layout for Start Date and End Date */
 .date-container {
   display: flex;
-  justify-content: space-between; /* Align Start Date and End Date horizontally */
+  justify-content: space-between;
 }
 
-.date-container label {
-  flex-basis: calc(50% - 20px); /* Each label takes half of the row with spacing */
-}
-
-/* Dropdown for Filtered Recipes */
 .dropdown-recipes-list {
-  max-height: 150px; /* Limit height to make it scrollable */
-  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 150px;
+  overflow-y: auto;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 10px; /* Add space between search bar and dropdown */
+  border-radius: 12px;
+  margin-top: 10px;
 }
 
 .dropdown-recipe-item {
@@ -312,10 +270,9 @@ button.back-button:hover {
 }
 
 .dropdown-recipe-item:hover {
-  background-color: #f4f4f9; /* Highlight item on hover */
+  background-color: #f4f4f9;
 }
 
-/* Selected Recipes Section */
 .selected-recipes-container {
   margin-top: 20px;
 }
@@ -327,33 +284,32 @@ button.back-button:hover {
 
 .selected-recipes-list li {
   display: flex;
-  justify-content: space-between; /* Align recipe name and remove button */
+  justify-content: space-between;
 }
 
 .selected-recipes-list li button {
   margin-left: 10px;
 }
 
-/* Buttons Layout */
 .buttons-container {
   display: flex;
+  justify-content: center;
 }
 
 .buttons-container button {
-  margin-left: 10px; /* Add spacing between Done and Cancel buttons */
+  margin-left: 10px;
 }
 
 .complete-button {
-  background-color: #d9534f; 
+  background-color: #d9534f;
   padding: 12px;
   color: white;
-  border-radius: 5px;
-  position: absolute; 
-  top: 15px; 
-  right: 15px; 
-  margin: auto;
+  border-radius: 12px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 .complete-button:hover {
-  background-color: #c9302c; 
+  background-color: #c9302c;
 }
