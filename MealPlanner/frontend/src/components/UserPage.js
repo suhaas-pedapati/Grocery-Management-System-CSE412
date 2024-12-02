@@ -41,14 +41,16 @@ const UserPage = () => {
                 <button className="logout-button" onClick={() => navigate('/')}>Logout</button>
             </div>
 
-            <h1>Welcome, {username}</h1>
+            {/* Welcome Text */}
+            <h1 style={{ color: 'white' }}>Welcome, {username}!</h1>
 
             {/* Create New Meal Plan Button */}
             <button className="create-mealplan-button" onClick={() => setIsModalOpen(true)}>
-                + New Meal Plan
+                + Add A New Meal Plan
             </button>
 
-            <h2>Your Meal Plans</h2>
+            {/* Meal Plans Header */}
+            <h2 style={{ color: 'white' }}>Previously Saved Meal Plans:</h2>
 
             {/* List of Meal Plans */}
             <div className="mealplan-container">
