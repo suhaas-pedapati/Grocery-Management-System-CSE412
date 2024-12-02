@@ -40,62 +40,101 @@ const MealPlanDetails = () => {
     };
 
     if (!mealPlanDetails) {
-        return <p>Loading...</p>;
+        return <p style={{ color: 'white', textAlign: 'center' }}>Loading...</p>;
     }
 
     const { recipes, groceryList } = mealPlanDetails;
 
     return (
-        <div className="meal-plan-details">
-            {/* Back Button */}
-            <button className="back-button" onClick={() => navigate('/user')}>Back</button>
+        <div style={{ color: 'white', backgroundColor: 'black', padding: '20px', textAlign: 'center' }}>
+            {/* Back and Complete Buttons */}
+            <div style={{ maxWidth: '80%', margin: '0 auto', marginBottom: '20px', display: 'flex', justifyContent: 'space-between' }}>
+                <button
+                    style={{
+                        backgroundColor: '#555555',
+                        color: 'white',
+                        padding: '10px 20px',
+                        borderRadius: '12px',
+                        cursor: 'pointer',
+                        border: 'none',
+                    }}
+                    onClick={() => navigate('/user')}
+                >
+                    Back to Main Page
+                </button>
 
-            {/* Complete Button */}
-            <button className="complete-button" onClick={handleDeleteMealPlan}>Complete</button>
+                <button
+                    style={{
+                        backgroundColor: '#d9534f',
+                        color: 'white',
+                        padding: '10px 20px',
+                        borderRadius: '12px',
+                        cursor: 'pointer',
+                        border: 'none',
+                    }}
+                    onClick={handleDeleteMealPlan}
+                >
+                    Complete & Delete
+                </button>
+            </div>
 
             {/* Meal Plan Name and Dates */}
-            <h1>{name}</h1>
-            <p style={{ textAlign: 'center' }}>{`(${new Date(startDate).toLocaleDateString()} - ${new Date(endDate).toLocaleDateString()})`}</p>
+            <div style={{ maxWidth: '80%', margin: '0 auto' }}>
+                <h1 style={{ color: 'white' }}>Meal Plan Name: {name}</h1>
+                <p style={{ color: 'white' }}>Dates: {`(${new Date(startDate).toLocaleDateString()} - ${new Date(endDate).toLocaleDateString()})`}</p>
+            </div>
 
-            <div className="details-container">
-                {/* Recipes Table */}
-                <div className="recipe-container">
-                    <h2>Recipes</h2>
-                    <table className="recipe-table">
-                        <thead>
-                            <tr>
-                                <th>Recipe Name</th>
-                                <th>Instructions</th>
+            {/* Recipes Table */}
+            <div style={{ maxWidth: '80%', margin: '20px auto' }}>
+                <h2 style={{ color: '#f57c00', marginBottom: '20px' }}>Your Dishes & Recipes:</h2>
+                <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '20px' }}>
+                    <thead>
+                        <tr>
+                            <th style={{ color: '#f57c00', textAlign: 'left', padding: '10px', borderBottom: '1px solid #555' }}>
+                                Dish
+                            </th>
+                            <th style={{ color: '#f57c00', textAlign: 'left', padding: '10px', borderBottom: '1px solid #555' }}>
+                                Cooking Instructions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {recipes.map((recipe, index) => (
+                            <tr key={index}>
+                                <td style={{ padding: '10px', borderBottom: '1px solid #555' }}>{recipe.recipename}</td>
+                                <td style={{ padding: '10px', borderBottom: '1px solid #555' }}>{recipe.instructions}</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            {recipes.map((recipe, index) => (
-                                <tr key={index}>
-                                    <td>{recipe.recipename}</td>
-                                    <td>{recipe.instructions}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
 
-                {/* Grocery List Table */}
-                <div className="grocery-list-container">
-                    <h2>{groceryList.name}</h2> 
-                    <table className="grocery-table">
-                        <thead>
-                            <tr>
-                                <th>Ingredients</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {groceryList.ingredients.map((ingredient, index) => (
-                                <tr key={index}>
-                                    <td>{ingredient}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+            {/* Grocery List */}
+            <div style={{ maxWidth: '80%', margin: '20px auto' }}>
+                <h2 style={{ color: '#f57c00', marginBottom: '20px' }}>Your Grocery List:</h2>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        justifyContent: 'center',
+                        gap: '10px',
+                    }}
+                >
+                    {groceryList.ingredients.map((ingredient, index) => (
+                        <div
+                            key={index}
+                            style={{
+                                backgroundColor: '#1e1e1e',
+                                color: 'white',
+                                padding: '10px 15px',
+                                borderRadius: '8px',
+                                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                                textAlign: 'center',
+                            }}
+                        >
+                            {ingredient}
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
