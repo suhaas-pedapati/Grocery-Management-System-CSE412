@@ -36,17 +36,17 @@ const RegisterForm = () => {
         <div className="center-content">
             {/* Back Button in Top Left */}
             <div className="back-button-container">
-                <button className="back-button" onClick={() => navigate('/')}>Back</button>
+                <button className="back-button" onClick={() => navigate('/')}>Back to Home Page</button>
             </div>
 
             <form onSubmit={onSubmit}>
-                <h2>Register</h2>
+                <h2>Register:</h2>
                 <input 
                     type="text" 
                     name="username" 
                     value={username} 
                     onChange={onChange} 
-                    placeholder="Username" 
+                    placeholder="Enter your Name" 
                     required 
                 />
                 <input 
@@ -54,7 +54,7 @@ const RegisterForm = () => {
                     name="email" 
                     value={email} 
                     onChange={onChange} 
-                    placeholder="Email" 
+                    placeholder="Enter your Email ID" 
                     required 
                 />
                 <input 
@@ -62,10 +62,10 @@ const RegisterForm = () => {
                     name="password" 
                     value={password} 
                     onChange={onChange} 
-                    placeholder="Password" 
+                    placeholder="Enter your Password" 
                     required 
                 />
-                <button type="submit">Register</button>
+                <button type="submit">Confirm</button>
             </form>
         </div>
     );
